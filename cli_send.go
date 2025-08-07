@@ -23,10 +23,14 @@ func (cli *CLI) send(from, to string, amount int, nodeID string, mineNow bool) {
 	UTXOSet := UTXOSet{bc}
 	defer bc.db.Close()
 
-	wallets, err := NewWallets(nodeID)
+	wallets, err := NewWallets(nodeID) // Initialize wallets
 	if err != nil {
 		log.Panic(err)
+	} //	Retrieve the wallets
+	if !wallets.IsWalletExist(from) {
+		log.Panic("ERROR: Sender wallet does not exist")
 	}
+
 	wallet := wallets.GetWallet(from)
 
 	tx := NewUTXOTransaction(&wallet, to, amount, &UTXOSet)
