@@ -35,7 +35,10 @@ func NewMerkleTree(data [][]byte) *MerkleTree { // Create a new Merkle tree from
 		nodes = append(nodes, *node)
 	}
 
-	for i := 0; i < len(data)/2; i++ {
+	for i := 0; i < len(data)/2; i++ { // 	Iterate until we have only one node left, which will be the root of the Merkle tree
+		if len(nodes) == 1 {
+			break // If only one node is left, it is the root node
+		}
 		var newLevel []MerkleNode
 
 		for j := 0; j < len(nodes); j += 2 {
