@@ -30,7 +30,7 @@ func NewMerkleTree(data [][]byte) *MerkleTree { // Create a new Merkle tree from
 		data = append(data, data[len(data)-1])
 	}
 
-	for _, datum := range data {
+	for _, datum := range data { // 	Iterate over the data and create leaf nodes
 		node := NewMerkleNode(nil, nil, datum)
 		nodes = append(nodes, *node)
 	}
