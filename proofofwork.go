@@ -36,7 +36,11 @@ func NewProofOfWork(b *Block) *ProofOfWork { // Create a new ProofOfWork instanc
 	return pow
 }
 
-func (pow *ProofOfWork) prepareData(nonce int) []byte {
+func (pow *ProofOfWork) prepareData(nonce int) []byte { //	Prepare the data for hashing
+	// The data includes the previous block's hash, the current block's transactions hash,
+	// the timestamp, the target bits, and the nonce
+	// This data will be hashed to find a valid proof-of-work
+	// The nonce is incremented until a valid hash is found
 	data := bytes.Join(
 		[][]byte{
 			pow.block.PrevBlockHash,
