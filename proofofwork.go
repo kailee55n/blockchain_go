@@ -21,7 +21,10 @@ type ProofOfWork struct {
 }
 
 // NewProofOfWork builds and returns a ProofOfWork
-func NewProofOfWork(b *Block) *ProofOfWork {
+func NewProofOfWork(b *Block) *ProofOfWork { // Create a new ProofOfWork instance for the given block
+	// Create a target based on the difficulty level
+	// The target is a big integer that represents the maximum hash value allowed for a valid block
+	// The lower the target, the more difficult it is to find a valid hash
 	target := big.NewInt(1)
 	target.Lsh(target, uint(256-targetBits))
 
