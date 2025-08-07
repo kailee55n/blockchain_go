@@ -65,7 +65,9 @@ func NewMerkleNode(left, right *MerkleNode, data []byte) *MerkleNode { //	 Creat
 		hash := sha256.Sum256(data)
 		mNode.Data = hash[:]
 	} else {
-		prevHashes := append(left.Data, right.Data...)
+		prevHashes := append(left.Data, right.Data...) //	 Concatenate the hashes of the left and right children
+		// Compute the hash of the concatenated hashes
+		// This is the hash of the current node
 		hash := sha256.Sum256(prevHashes)
 		mNode.Data = hash[:]
 	}
