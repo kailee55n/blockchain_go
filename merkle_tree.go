@@ -55,7 +55,10 @@ func NewMerkleTree(data [][]byte) *MerkleTree { // Create a new Merkle tree from
 }
 
 // NewMerkleNode creates a new Merkle tree node
-func NewMerkleNode(left, right *MerkleNode, data []byte) *MerkleNode {
+func NewMerkleNode(left, right *MerkleNode, data []byte) *MerkleNode { //	 Create a new Merkle tree node
+	if left == nil && right == nil && len(data) == 0 {
+		return nil // Return nil if no data is provided and no children are present
+	}
 	mNode := MerkleNode{}
 
 	if left == nil && right == nil {
