@@ -1,6 +1,7 @@
 //This file is part of the Go Blockchain project
 //It is a simple implementation of a wallet that can generate a new key pair,
 //hash public keys, and validate addresses using Base58 encoding.
+//It is not intended for production use and is for educational purposes only.
 
 package main
 
