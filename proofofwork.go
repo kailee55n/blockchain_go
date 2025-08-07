@@ -28,7 +28,10 @@ func NewProofOfWork(b *Block) *ProofOfWork { // Create a new ProofOfWork instanc
 	target := big.NewInt(1)
 	target.Lsh(target, uint(256-targetBits))
 
-	pow := &ProofOfWork{b, target}
+	pow := &ProofOfWork{b, target} // Initialize the ProofOfWork with the block and target
+
+	// Print the target for debugging purposes
+	fmt.Printf("Target: %064x\n", pow.target)
 
 	return pow
 }
