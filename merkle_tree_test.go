@@ -76,7 +76,6 @@ func TestNewMerkleTree(t *testing.T) {
 
 	rootHash := fmt.Sprintf("%x", n7.Data) // 	Get the root hash from the last node
 	assert.Equal(t, "4e3e44e55926330ab6c31892f980f8bfd1a6e910ff1ebc3f778211377f35227e", rootHash, "Root hash is correct")
-	mTree := NewMerkleTree(data) /
-
-		assert.Equal(t, rootHash, fmt.Sprintf("%x", mTree.RootNode.Data), "Merkle tree root hash is correct")
+	mTree := NewMerkleTree(data)
+	assert.Equal(t, rootHash, fmt.Sprintf("%x", mTree.RootNode.Data), "Merkle tree root hash is correct")
 }
