@@ -11,9 +11,12 @@ type MerkleTree struct {
 
 // MerkleNode represent a Merkle tree node
 type MerkleNode struct {
-	Left  *MerkleNode
-	Right *MerkleNode
-	Data  []byte
+	Left  *MerkleNode // Left child of the node
+	Right *MerkleNode // Right child of the node
+	// Data is the hash of the node, if it is a leaf node, it contains the data
+	// If it is an internal node, it contains the hash of the concatenation of its children's hashes
+	// The hash is computed using SHA-256
+	Data []byte
 }
 
 // NewMerkleTree creates a new Merkle tree from a sequence of data
