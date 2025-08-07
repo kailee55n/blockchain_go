@@ -19,6 +19,10 @@ func (cli *CLI) printChain(nodeID string) {
 		fmt.Printf("Transactions: %d\n", len(block.Transactions))
 		fmt.Printf("Nonce: %d\n", block.Nonce)
 		fmt.Printf("Hash: %x\n", block.Hash)
+		fmt.Printf("Prev. Hash: %x\n", block.PrevBlockHash)
+		fmt.Printf("Data: %s\n", block.Data) // Print block data
+		fmt.Printf("Difficulty: %d\n", block.Difficulty)
+		fmt.Printf("Version: %d\n", block.Version)
 		fmt.Printf("Height: %d\n", block.Height)
 		fmt.Printf("Prev. block: %x\n", block.PrevBlockHash)
 		pow := NewProofOfWork(block)
