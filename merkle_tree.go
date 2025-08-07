@@ -6,7 +6,7 @@ import (
 
 // MerkleTree represent a Merkle tree
 type MerkleTree struct {
-	RootNode *MerkleNode
+	RootNode *MerkleNode // RootNode is the root node of the Merkle tree
 }
 
 // MerkleNode represent a Merkle tree node
