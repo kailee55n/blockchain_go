@@ -1,3 +1,7 @@
+// cli_listaddress.go
+// This file is part of the Go Blockchain project, which implements a simple CLI for listing addresses.
+// SPDX-License-Identifier: MIT
+
 package main
 
 import (
