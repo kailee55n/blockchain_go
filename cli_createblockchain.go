@@ -1,3 +1,6 @@
+// This is cli_createblockchain.go file
+// It is part of the Go Blockchain project, which implements a simple CLI for creating a blockchain.
+// SPDX-License-Identifier: MIT
 package main
 
 import (
