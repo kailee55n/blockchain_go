@@ -1,3 +1,5 @@
+//This code file is cli_createwallet.go file.
+
 package main
 
 import "fmt"
