@@ -26,7 +26,7 @@ func NewMerkleTree(data [][]byte) *MerkleTree { // Create a new Merkle tree from
 	}
 	var nodes []MerkleNode
 
-	if len(data)%2 != 0 {
+	if len(data)%2 != 0 { //	 If the number of data items is odd, duplicate the last item
 		data = append(data, data[len(data)-1])
 	}
 
