@@ -13,7 +13,13 @@ func (cli *CLI) send(from, to string, amount int, nodeID string, mineNow bool) {
 		log.Panic("ERROR: Recipient address is not valid")
 	}
 
-	bc := NewBlockchain(nodeID)
+	bc := NewBlockchain(nodeID) // Initialize the blockchain
+	defer bc.db.Close()
+
+	if !bc.IsNodeExist(nodeID) {
+		log.Panic("ERROR: Node does not exist")
+	} // Check if the node exists
+
 	UTXOSet := UTXOSet{bc}
 	defer bc.db.Close()
 
