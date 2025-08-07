@@ -20,7 +20,10 @@ type MerkleNode struct {
 }
 
 // NewMerkleTree creates a new Merkle tree from a sequence of data
-func NewMerkleTree(data [][]byte) *MerkleTree {
+func NewMerkleTree(data [][]byte) *MerkleTree { // Create a new Merkle tree from a sequence of data
+	if len(data) == 0 {
+		return &MerkleTree{nil} // Return an empty Merkle tree if no data is provided
+	}
 	var nodes []MerkleNode
 
 	if len(data)%2 != 0 {
