@@ -1,3 +1,6 @@
+// This is cli_getbalance.go file.
+// It is part of the Go Blockchain project, which implements a simple CLI for querying balances.
+// SPDX-License-Identifier: MIT
 package main
 
 import (
