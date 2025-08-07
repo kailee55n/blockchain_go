@@ -1,3 +1,5 @@
+//	This is base58_test.go file
+
 package main
 
 import (
